@@ -1,4 +1,4 @@
-Use this folder to create new contracts and modify them for OpenBrush compatibility.
+Use this folder to create new ink! contracts and modify them for OpenBrush compatibility.
 
 For each new contract you want to create:
 
