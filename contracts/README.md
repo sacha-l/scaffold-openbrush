@@ -8,7 +8,7 @@ For each new contract you want to create:
 1. Add `"openbrush/std",` to the `std` features in the Cargo.toml
 1. Enable the default implementation of OpenBrush traits by using [`min_specialization`](https://doc.rust-lang.org/beta/unstable-book/language-features/min-specialization.html).
 
-Put this line at the top of the contract's `lib.rs` file: ``#![feature(min_specialization)]`
+Put this line at the top of the contract's `lib.rs` file: `#![feature(min_specialization)]`
 
 1. Replace the `#[ink::contract]` with `#[openbrush::contract]`
 
