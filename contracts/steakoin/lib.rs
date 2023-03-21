@@ -1,15 +1,35 @@
 #![cfg_attr(not(feature = "std"), no_std)]
 #![feature(min_specialization)]
-
+        
 #[openbrush::contract]
-mod steakoin {
+pub mod steakoin {
+    
+    // Imports from openbrush
+    use openbrush::{
+        contracts::psp22::{
+            Data as PSP22Data,
+            *,
+        },
+        traits::Storage,
+    };
 
-    /// Defines the storage of your contract.
-    /// Add new fields to the below struct in order
-    /// to add new static storage fields to your contract.
+    // Defines storage for your contract
     #[ink(storage)]
-    pub struct Steakoin {}
-
-    impl Steakoin {}
-
+    #[derive(Default, Storage)]
+    pub struct Steakoin {
+    	#[storage_field]
+		psp22: psp22::Data,
+    }
+    
+    // Section contains default implementation without any modifications
+	impl PSP22 for Steakoin {}
+     
+    impl Steakoin {
+        #[ink(constructor)]
+        pub fn new(initial_supply: Balance) -> Self {
+            let mut _instance = Self::default();
+			_instance._mint_to(_instance.env().caller(), initial_supply).expect("Should mint"); 
+			_instance
+        }
+    }
 }
