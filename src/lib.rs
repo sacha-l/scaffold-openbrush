@@ -3,7 +3,7 @@
 
 pub mod impls;
 mod libs;
-mod traits;pro
+mod traits;
 
 pub use impls::*;
 pub use libs::*;
