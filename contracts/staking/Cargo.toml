@@ -5,7 +5,7 @@ authors = ["[your_name] <[your_email]>"]
 edition = "2021"
 
 [dependencies]
-ink = { version = "4.0.1", default-features = false }
+ink = { version = "4.0.0", default-features = false }
 openbrush = { git = "https://github.com/Brushfam/openbrush-contracts", version = "3.0.0", default-features = false, features = ["psp22"] }
 
 scale = { package = "parity-scale-codec", version = "3", default-features = false, features = ["derive"] }
@@ -27,3 +27,7 @@ default = ["std"]
 std = ["ink/std", "scale/std", "scale-info/std", "openbrush/std", "dapp/std"]
 ink-as-dependency = []
 e2e-tests = []
+
+# [profile.release]
+# overflow-checks = false     # Disable integer overflow checks.
+# lto = false                 # Enable full link-time optimization. 

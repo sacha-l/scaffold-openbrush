@@ -5,7 +5,7 @@ authors = ["author"]
 edition = "2021"
 
 [dependencies]
-ink = { vesion = "4.0.1", default-features = false }
+ink = { vesion = "4.0.0", default-features = false }
 openbrush = { version = "3.0.0", git = "https://github.com/Brushfam/openbrush-contracts", default-features = false, features = ["psp22"] }
 scale = { package = "parity-scale-codec", version = "3", default-features = false, features = ["derive"] }
 scale-info = { version = "2.3", default-features = false, features = ["derive"], optional = true }
@@ -22,3 +22,6 @@ std = [
     "scale-info/std",
     "openbrush/std",
 ]
+
+# adds staking features to dapp
+staking = []
